@@ -19,9 +19,6 @@ export class UserService {
 
   async findAll() {
     const users: User[] = await this.userRepository.find();
-    if (users.length === 0) {
-      throw new NotFoundException('No hay usuarios en la base de datos');
-    }
     return users;
   }
 
